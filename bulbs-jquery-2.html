@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .darkness {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .light {
+            background-color: lemonchiffon;
+            color: blue;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body id="mainContent" class="darkness">
+    <img id="lightBulb" src="img/bulboff.gif" width="150px">
+    <img id="lightBulb1" src="img/bulboff.gif" width="150px">
+    <img id="lightBulb2" src="img/bulboff.gif" width="150px">
+    <div>
+        <img id="switch" src="img/switch_off.png" width="100">
+        <img id="switch1" src="img/switch_off.png" width="100">
+        <img id="switch2" src="img/switch_off.png" width="100">
+    </div>
+    <div id="status"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+        $("#switch").click(function() {
+            if ($("#switch").attr("src") == "img/switch_off.png") {
+                $("#switch").attr("src", "img/switch_on.png");
+                bulbon();
+            }
+            else {
+                $("#switch").attr("src", "img/switch_off.png");
+                bulboff();
+            }
+        })
+        $("#switch1").click(function() {
+            if ($("#switch1").attr("src") == "img/switch_off.png") {
+                $("#switch1").attr("src", "img/switch_on.png");
+                bulbon1();
+            }
+            else {
+                $("#switch1").attr("src", "img/switch_off.png");
+                bulboff1();
+            }
+        })
+        $("#switch2").click(function() {
+            if ($("#switch2").attr("src") == "img/switch_off.png") {
+                $("#switch2").attr("src", "img/switch_on.png");
+                bulbon2();
+            }
+            else {
+                $("#switch2").attr("src", "img/switch_off.png");
+                bulboff2();
+            }
+        });
+
+        function bulbon() {
+            $("#lightBulb").attr("src", "img/bulbon.gif");
+            $("#status").html("<h2>It's too bright in here!</h2>");
+            $("#mainContent").removeClass("darkness").addClass("light");
+        }
+
+        function bulboff() {
+            $("#lightBulb").attr("src", "img/bulboff.gif");
+            $("#status").html("<h2>It's dark in here!</h2>");
+            $("#mainContent").removeClass("light").addClass("darkness");
+        }
+
+        function bulbon1() {
+            $("#lightBulb1").attr("src", "img/bulbon.gif");
+            $("#status").html("<h2>It's too bright in here!</h2>");
+            $("#mainContent").removeClass("darkness").addClass("light");
+        }
+
+        function bulboff1() {
+            $("#lightBulb1").attr("src", "img/bulboff.gif");
+            $("#status").html("<h2>It's dark in here!</h2>");
+            $("#mainContent").removeClass("light").addClass("darkness");
+        }
+
+        function bulbon2() {
+            $("#lightBulb2").attr("src", "img/bulbon.gif");
+            $("#status").html("<h2>It's too bright in here!</h2>");
+            $("#mainContent").removeClass("darkness").addClass("light");
+        }
+
+        function bulboff2() {
+            $("#lightBulb2").attr("src", "img/bulboff.gif");
+            $("#status").html("<h2>It's dark in here!</h2>");
+            $("#mainContent").removeClass("light").addClass("darkness");
+        }
+        
+       /*alternative way:
+       
+       function switchLight(bulbNumber) {
+            let bulb = $("#" + bulbNumber).attr("src");
+            
+        }
+        switchLight("Bulb1");*/
+        
+    </script>
+
+</body>
+
+</html>

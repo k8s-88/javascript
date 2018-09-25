@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .darkness {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .light {
+            background-color: lemonchiffon;
+            color: blue;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body id="mainContent" class="darkness">
+    <img id="lightbulb" src="img/bulboff.gif" width="150px">
+
+    <div>
+        <button onclick="bulbon()">Lights on!</button>
+        <button onclick="bulboff()">Lights off!</button>
+    </div>
+
+    <div id="status"></div>
+
+    <div id="status"></div>
+
+    <script>
+        let bulbImage = document.getElementById("lightbulb")
+        let mainContent = document.getElementById("mainContent")
+        let statusText = document.getElementById("status")
+
+        function bulbon() {
+            document.getElementById("lightbulb").src = "img/bulbon.gif"
+            document.getElementById("status").innerHTML = "<h2>It's too bright!!!</h2>"
+            mainContent.classList.add("light")
+            mainContent.classList.remove("darkness")
+        }
+
+        function bulboff() {
+            document.getElementById("lightbulb").src = "img/bulboff.gif"
+            document.getElementById("status").innerHTML = "<h2>It's dark!</h2>"
+            mainContent.classList.remove("darkness")
+            mainContent.classList.add("darkness")
+            mainContent.classList.remove("light")
+        }
+    </script>
+</body>
+
+</html>
